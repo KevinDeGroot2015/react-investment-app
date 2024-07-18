@@ -1,0 +1,109 @@
+@import url("https://fonts.googleapis.com/css2?family=Quicksand:wght@400;700&family=Roboto+Condensed:wght@400;700&display=swap");
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+#root {
+    display: flex;
+    flex-flow: row wrap;
+    padding: 40px;
+    margin: 0 auto;
+    gap: 20px;
+    width: 100%;
+    max-width: 800px;
+}
+
+body {
+    font-family: "Quicksand", sans-serif;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    background: radial-gradient(#303b37, #1a1f1d);
+    color: #e1eeeb;
+    min-height: 100vh;
+}
+
+.header {
+    display: flex;
+    flex-flow: column;
+    gap: 10px;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    margin-bottom: 20px;
+
+    h1 {
+        font-size: 1.5rem;
+    }
+
+    h3 {
+        font-weight: normal;
+    }
+}
+
+.calculatorOverview {
+    display: flex;
+    flex-flow: column;
+    gap: 20px;
+    background: #3f3838;
+    padding: 20px;
+    width: 100%;
+    max-width: 250px;
+    height: max-content;
+    position: sticky;
+    top: 20px;
+    bottom: 20px;
+
+    .calculatorInput {
+        display: flex;
+        flex-flow: column;
+        gap: 10px;
+
+        span {
+            font-family: "Roboto Condensed", sans-serif;
+            font-size: 0.8rem;
+            font-weight: bold;
+            text-transform: uppercase;
+        }
+
+        input {
+            padding: 1rem;
+            max-width: 20rem;
+            border-radius: 4px;
+            color: #ffffff;
+            font-size: 1rem;
+            background: #2e2626;
+            border: none;
+        }
+    }
+}
+
+.interestListOverview,
+.error {
+    width: 100%;
+    max-width: calc(100% - 270px);
+    text-align: center;
+
+    .result {
+        width: 100%;
+        table-layout: fixed;
+        border-spacing: 1rem;
+        text-align: right;
+
+        thead {
+            font-size: 0.7rem;
+            color: #83e6c0;
+        }
+
+        tbody {
+            font-family: "Roboto Condensed", sans-serif;
+            font-size: 0.85rem;
+            color: #c2e9e0;
+        }
+    }
+}
+
+.error {
+}
