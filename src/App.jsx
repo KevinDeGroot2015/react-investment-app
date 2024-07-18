@@ -1,26 +1,11 @@
-import { useState } from "react";
 import Header from "./components/Header/header";
 import CalculatorOverview from "./components/CalculatorOverview/CalculatorOverview";
 import InterestListOverview from "./components/InterestListOverview/InterestListOverview";
+import { useFilter } from "./hooks/useFilter";
 
-function App() {
-    const [numberStates, setNumberstates] = useState({
-        start: 500,
-        annual: 100,
-        required: 4,
-        years: 10,
-    });
+export default function App() {
+    const [numberStates, handleChange] = useFilter();
 
-    const validChecker = numberStates.years >= 1 && numberStates.years <= 100;
-
-    function handleChange(item, newValue) {
-        setNumberstates((prevNumberstate) => {
-            return {
-                ...prevNumberstate,
-                [item]: +newValue,
-            };
-        });
-    }
     return (
         <>
             <Header />
@@ -28,7 +13,7 @@ function App() {
                 onChangeInput={handleChange}
                 numberStatesHandler={numberStates}
             />
-            {validChecker ? (
+            {numberStates.years >= 1 && numberStates.years <= 100 ? (
                 <InterestListOverview listValue={numberStates} />
             ) : (
                 <p className="error">
@@ -38,5 +23,3 @@ function App() {
         </>
     );
 }
-
-export default App;
